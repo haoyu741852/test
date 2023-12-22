@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TESTModelStoreContainer" CdmEntityContainer="TESTEntities">
+    <EntitySetMapping Name="ProductsEFs">
+      <EntityTypeMapping TypeName="TESTModel.ProductsEF">
+        <MappingFragment StoreEntitySet="ProductsEF">
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="DefaultImageId" ColumnName="DefaultImageId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserEFs">
+      <EntityTypeMapping TypeName="TESTModel.UserEF">
+        <MappingFragment StoreEntitySet="UserEF">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="LogoutDateTime" ColumnName="LogoutDateTime" />
+          <ScalarProperty Name="LoginDateTime" ColumnName="LoginDateTime" />
+          <ScalarProperty Name="PwHash" ColumnName="PwHash" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

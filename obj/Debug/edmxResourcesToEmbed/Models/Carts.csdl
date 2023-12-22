@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TESTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TESTEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ProductsEFs" EntityType="TESTModel.ProductsEF" />
+    <EntitySet Name="UserEFs" EntityType="TESTModel.UserEF" />
+  </EntityContainer>
+  <EntityType Name="ProductsEF">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="28" Scale="3" />
+    <Property Name="PublishDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="DefaultImageId" Type="Int64" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserEF">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="PwHash" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="LoginDateTime" Type="DateTime" Precision="3" />
+    <Property Name="LogoutDateTime" Type="DateTime" Precision="3" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

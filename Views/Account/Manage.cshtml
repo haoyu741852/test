@@ -1,0 +1,76 @@
+﻿@model Carts.Models.UserEF
+
+@{
+    ViewBag.Title = "Manage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>修改</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>修改使用者</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PwHash, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PwHash, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PwHash, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.LoginDateTime, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.LoginDateTime, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.LogoutDateTime, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.LogoutDateTime, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="修改" class="btn btn-default" />
+        </div>
+        <input type="hidden" name="ReturnUrl" value="@ViewBag.ReturnUrl" />
+    </div>
+
+    @if (ViewBag.ResultMessage != null)
+    {
+        <div class="form-group alert alert-danger mt-3">
+            @ViewBag.ResultMessage
+        </div>
+    }
+
+</div>
+}
+
+<div>
+    <a href="@ViewBag.ReturnUrl">返回</a>
+</div>
