@@ -37,7 +37,7 @@ namespace Carts.Controllers
 
         public ActionResult Index2()
         {
-            return Content("<html><body><h1>這是一段測試文字</h1></body></html>");
+            return Content("<html><body><h1>這是一段測試文字1</h1></body></html>");
         }
     }
 }
